@@ -1,4 +1,4 @@
-package com.zhussain.imagelib.cache
+package com.zhussain.pinboardlib.cache
 
 class Config {
     companion object{

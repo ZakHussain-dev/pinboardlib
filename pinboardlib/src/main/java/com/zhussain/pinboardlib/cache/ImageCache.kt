@@ -1,4 +1,4 @@
-package com.zhussain.imagelib.cache
+package com.zhussain.pinboardlib.cache
 
 import android.graphics.Bitmap
 

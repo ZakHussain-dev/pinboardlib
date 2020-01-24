@@ -6,7 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.widget.ImageView
-import com.zhussain.imagelib.cache.CacheRepository
+import com.zhussain.pinboardlib.cache.CacheRepository
 import java.net.HttpURLConnection
 import java.net.URL
 

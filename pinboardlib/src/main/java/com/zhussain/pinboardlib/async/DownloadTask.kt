@@ -1,4 +1,4 @@
-package com.zhussain.imagelib.async
+package com.zhussain.pinboardlib.async
 
 import java.util.concurrent.Callable
 
