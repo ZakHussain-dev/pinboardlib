@@ -1,8 +1,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    
+
     <data>
+
         <variable
             name="userModel"
             type="com.zhussain.pinboard.viewmodel.UserViewModel" />
@@ -18,8 +19,7 @@
             userlistData="@{userModel.userProperties}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:padding="4dp"
+            android:clipToPadding="true"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,5 +37,4 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

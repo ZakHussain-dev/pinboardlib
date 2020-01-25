@@ -44,7 +44,7 @@ class UserListAdapter :
      */
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserListAdapter.UsersPropertyViewHolder {
-        return UsersPropertyViewHolder(UserListItemBinding.inflate(LayoutInflater.from(parent.context)))
+        return UsersPropertyViewHolder(UserListItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))  //(LayoutInflater.from(parent.context)))
     }
 
     /**
