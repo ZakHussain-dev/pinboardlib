@@ -5,6 +5,7 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.zhussain.pinboard.R
+import com.zhussain.pinboard.Util
 import com.zhussain.pinboard.viewmodel.UsersApiStatus
 import com.zhussain.pinboard.model.UsersProperty
 import com.zhussain.pinboardlib.PinboardLib
@@ -26,9 +27,8 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<UsersProperty>?) {
 
 @BindingAdapter("zakImg")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
-    var size:Int = 1024*1024
     imgUrl?.let {
-        hasUrl-> PinboardLib.getInstance(imgView.context,size)
+        hasUrl-> PinboardLib.getInstance(imgView.context,Util.MEMORY_SIZE)
         .displayImage(imgUrl,imgView, R.drawable.loading_animation)
     }
 }

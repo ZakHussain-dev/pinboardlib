@@ -13,6 +13,7 @@ class MemoryCache(newMaxSize: Int) : ImageCache {
 
     init {
         var cacheSize: Int
+
         if (newMaxSize > Config.maxMemory) {
             cacheSize = Config.defaultCacheSize;
             Log.d("MemoryCache", "New Value of cache is bigger than max cache available on system!")

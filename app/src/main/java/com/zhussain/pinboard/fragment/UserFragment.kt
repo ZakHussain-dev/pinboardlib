@@ -1,6 +1,7 @@
 package com.zhussain.pinboard.fragment
 
 
+import android.app.ActivityManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
