@@ -17,13 +17,25 @@ import java.util.concurrent.Future
 
 class PinboardLib private constructor(context: Context, cacheSize: Int){
 
+
+
     private val cache: CacheRepository = CacheRepository(context,cacheSize)
     private val executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors())
 
     private val mRunningDownloadList: HashMap<String,Future<Bitmap?>> = hashMapOf();
 
-    fun displayImage(url: String,imageView: ImageView,placeHolder: Int){
-        var bitmap = cache.get(url);
+    /**
+     *
+     * This function responsible to display Image from cache Memory
+     *
+     * @param url url
+     * @param imageView ImageView
+     * @param placeHolder placeHolder
+     *
+     */
+
+    public fun displayImage(url: String,imageView: ImageView,placeHolder: Int){
+        var bitmap = cache.get(url); //
         bitmap?.let {
             imageView.setImageBitmap(it)
             return
@@ -35,15 +47,25 @@ class PinboardLib private constructor(context: Context, cacheSize: Int){
         }
     }
 
-    fun addDownloadImageTask(url: String,downloadTask: DownloadTask<Bitmap?>) {
+    private fun addDownloadImageTask(url: String,downloadTask: DownloadTask<Bitmap?>) {
         mRunningDownloadList.put(url,executorService.submit(downloadTask))
     }
 
-    fun clearcache() {
+    /**
+     * Clear cache memory
+     */
+    public fun clearcache() {
         cache.clear()
     }
 
-    fun cancelTask(url: String){
+    /**
+     *
+     * This function used for cancel loading task by using [URL]
+     *
+     * @param url pass url as a String
+     *
+     */
+    public fun cancelTask(url: String){
         synchronized(this){
             mRunningDownloadList.forEach {
                 if (it.key == url &&  !it.value.isDone)
@@ -52,6 +74,10 @@ class PinboardLib private constructor(context: Context, cacheSize: Int){
         }
     }
 
+    /**
+     *
+     * This function used to cancel All Loading Task
+     */
     fun  cancelAll() {
         synchronized (this) {
             mRunningDownloadList.forEach{
@@ -61,6 +87,10 @@ class PinboardLib private constructor(context: Context, cacheSize: Int){
             mRunningDownloadList.clear()
         }
     }
+
+    /**
+     * Get [PinboardLib] instance/object
+     */
 
     companion object {
         private val INSTANCE: PinboardLib? = null

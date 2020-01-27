@@ -55,3 +55,4 @@ fun bindStatus(statusImageView: ImageView, status: UsersApiStatus?){
         }
     }
 }
+

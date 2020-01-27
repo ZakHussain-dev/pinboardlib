@@ -8,5 +8,27 @@
         android:id="@+id/userFragment"
         android:name="com.zhussain.pinboard.fragment.UserFragment"
         tools:layout="@layout/fragment_user"
-        android:label="UserFragment" />
+        android:label="UserFragment" >
+        <action
+            android:id="@+id/action_userFragment_to_testView"
+            app:destination="@id/testView" />
+    </fragment>
+    <fragment
+        android:id="@+id/testView"
+        android:name="com.zhussain.pinboard.fragment.TestView"
+        android:label="Pinboard"
+        tools:layout="@layout/fragment_test_view">
+        <action
+            android:id="@+id/action_testView_to_displayResult"
+            app:destination="@id/displayResult" />
+    </fragment>
+    <fragment
+        android:id="@+id/displayResult"
+        android:name="com.zhussain.pinboard.fragment.DisplayResult"
+        android:label="Pinboard"
+        tools:layout="@layout/fragment_display_result" >
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
 </navigation>

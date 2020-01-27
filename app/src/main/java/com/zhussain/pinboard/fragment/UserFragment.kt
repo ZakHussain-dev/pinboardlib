@@ -8,6 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import com.zhussain.pinboard.R
 import com.zhussain.pinboard.adapter.UserListAdapter
 import com.zhussain.pinboard.databinding.FragmentUserBinding
 import com.zhussain.pinboard.viewmodel.UserViewModel
@@ -44,7 +48,11 @@ class UserFragment : Fragment() {
             hasResponse->
             binding.textView.text = hasResponse
         })*/
-
+        binding.floatingActionButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_userFragment_to_testView)
+            //Navigation.createNavigateOnClickListener(R.id.action_userFragment_to_testView)
+            //Navigation.createNavigateOnClickListener(UserFrag.actionTitleQuizFragmentToGameQuizFragment())
+        }
         return binding.root;
     }
 

@@ -12,11 +12,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         //var activityManager  = this.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
         //var availMemoryInBytes = activityManager.memoryClass*1024*1024
-
-
-
     }
 }
