@@ -7,6 +7,11 @@ An image loading library for Android backed by Kotlin. Easy to download, display
 - Image downloading
 - In-Memory Caching
 
+### Sample App
+
+<img src ="https://user-images.githubusercontent.com/15200843/73289621-085fb500-4223-11ea-9f2b-0182f5668f63.jpeg" width ="240" height = "430"> <img src ="https://user-images.githubusercontent.com/15200843/73290082-cedb7980-4223-11ea-9f55-6bb47981d37f.jpeg" width ="240" height = "430"> <img src ="https://user-images.githubusercontent.com/15200843/73290242-19f58c80-4224-11ea-9d45-46b44c28fb57.jpeg" width ="240" height = "430">
+
+
 ### Quick Start
 
 To load an image into an ``ImageView``,use the ``displayImage`` extension function:
